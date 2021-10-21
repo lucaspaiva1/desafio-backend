@@ -4,28 +4,15 @@ const express = require("express");
 const db = require("./database");
 const mongoose = require("mongoose");
 
-class App {
-  constructor() {
-    this.express = express();
+const app = express();
 
-    this.database();
-    this.middlewares();
-    this.routes();
+mongoose.connect(db.uri, { useNewUrlParser: true });
 
-    this.express.listen(3000, () => console.log(`running in port 3000`));
-  }
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-  database() {
-    mongoose.connect(db.uri, { useNewUrlParser: true });
-  }
+app.use(require("./routes"));
 
-  middlewares() {
-    this.express.use(express.json());
-    this.express.use(express.urlencoded({ extended: true }));
-  }
+app.listen(3000, () => console.info(`running in port 3000`));
 
-  routes() {
-    this.express.use(require("./routes"));
-  }
-}
-module.exports = new App().express;
+module.exports = async () => app;
