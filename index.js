@@ -13,6 +13,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(require("./routes"));
 
-app.listen(proccess.env.PORT || 3000, () => console.info(`API is running..`));
+app.listen(process.env.PORT || 3000, () => console.info(`API is running..`));
 
 module.exports = async () => app;
