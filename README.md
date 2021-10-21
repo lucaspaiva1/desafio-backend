@@ -1,11 +1,6 @@
 # Desafio Backend
 
-# Running API
-
-## Dependencies
-
-- MongoDB
-- node 14.x
+## Running API
 
 ```bash
 git clone https://github.com/lucaspaiva1/desafio-backend.git
@@ -15,7 +10,12 @@ npm i
 npm start
 ```
 
-# Online Version
+## Dependencies
+
+- MongoDB
+- node 14.x
+
+## Online Version
 
 https://desafio-coteminas.herokuapp.com/
 
