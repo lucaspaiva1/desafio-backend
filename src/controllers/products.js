@@ -1,10 +1,8 @@
-const Product = require("../models/products");
+const ProductService = require("../services/products");
 
-class ProductController {
+module.exports = {
   async index(req, res) {
-    const data = await Product.find({});
+    const data = await ProductService.index(req.query);
     return res.json(data);
-  }
-}
-
-module.exports = new ProductController();
+  },
+};
