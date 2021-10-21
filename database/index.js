@@ -1,5 +1,5 @@
-DATABASE_URI = process.env.DATABASE_URI;
+DATABASE_URL = process.env.DATABASE_URL;
 
 module.exports = {
-  uri: DATABASE_URI,
+  uri: DATABASE_URL,
 };
