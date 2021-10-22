@@ -14,7 +14,7 @@ module.exports = {
 
     const [items, totalItems] = await Promise.all([getItems, getItemsCount]);
 
-    const totalPages = totalItems / limit;
+    const totalPages = Math.ceil(totalItems / limit);
 
     return { items, page, totalPages, totalItems };
   },

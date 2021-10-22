@@ -42,6 +42,7 @@ describe("Product Service", async () => {
     await ProductMock.run(11);
     const response = await request(app).get(`/products?page=2`).expect(200);
     assert.strictEqual(response.body.items.length, 1);
+    assert.strictEqual(response.body.totalPages, 2);
   });
 
   it("Should filter products by name", async () => {
