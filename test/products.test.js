@@ -57,4 +57,12 @@ describe("Product Service", async () => {
     assert.strictEqual(response.body.items.length, 1);
     assert.strictEqual(response.body.items[0].title, productName);
   });
+
+  it("Should return total items quantity", async () => {
+    await ProductMock.run(13);
+
+    const response = await request(app).get(`/products`).expect(200);
+
+    assert.strictEqual(response.body.totalItems, 13);
+  });
 });
