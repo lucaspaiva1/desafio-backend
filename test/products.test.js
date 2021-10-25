@@ -25,6 +25,10 @@ describe("Product Service", async () => {
     await ProductMock.run(10);
     const response = await request(app).get("/products").expect(200);
     assert.strictEqual(response.body.items.length, 10);
+    assert.ok(response.body.items[0].image);
+    assert.ok(response.body.items[0].title);
+    assert.ok(response.body.items[0].description);
+    assert.ok(response.body.items[0].price);
   });
 
   it("Should limit products results", async () => {
