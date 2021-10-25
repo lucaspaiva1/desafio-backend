@@ -16,10 +16,27 @@ npm start
 npm run seed
 ```
 
+#### Test
+
+```bash
+npm test
+```
+
 ## Dependencies
 
 - MongoDB
 - node 14.x
+
+## Docs
+
+`[GET] /products`
+
+- Get products list
+
+#### query parameters
+- `page` - current page
+- `rows` - quantity of items per page (`default: 10`)
+- `search` - search items by name
 
 ## Online Version
 
