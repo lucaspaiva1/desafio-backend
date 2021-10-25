@@ -10,6 +10,12 @@ npm i
 npm start
 ```
 
+#### Seed database
+
+```bash
+npm run seed
+```
+
 ## Dependencies
 
 - MongoDB
